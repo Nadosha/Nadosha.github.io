@@ -8,19 +8,47 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
+    "noEmit": true,
+    "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "isolatedModules": false,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@Components/*": [
+        "src/components/*"
+      ],
+      "@Features/*": [
+        "src/features/*"
+      ],
+      "@Hooks/*": [
+        "src/hooks/*"
+      ],
+      "@Redux/*": [
+        "src/redux/*"
+      ],
+      "@Theme/*": [
+        "src/theme/*"
+      ],
+      "@Types/*": [
+        "src/types/*"
+      ],
+      "@Utils/*": [
+        "src/utils/*"
+      ]
+    }
   },
   "include": [
-    "src"
+    "src",
+    "src/**/*.ts",
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }
