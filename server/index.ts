@@ -17,7 +17,7 @@ interface User {
 
 // Initialize Express app
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 // Middleware to parse JSON bodies
 app.use(express.json());
