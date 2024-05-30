@@ -1,4 +1,3 @@
-import React, { ReactNode } from 'react'
 import { Paper, styled } from '@mui/material'
 
 export const Panel = styled(Paper)(({ theme }) => ({

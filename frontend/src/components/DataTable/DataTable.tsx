@@ -28,7 +28,7 @@ export function DataTable({
     }
 
     return (
-        <div style={{ width: '100%', height: '100%' }}>
+        <div style={{ width: '100%', height: '100%' }} ref={ref}>
             <AgGridReact onGridReady={handleGridReady} {...props} />
         </div>
     )
