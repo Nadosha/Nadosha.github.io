@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import fs from 'fs';
 import { v4 as uuidv4 } from 'uuid';
+import cors from 'cors';
 
 // Define types for user object
 interface User {
@@ -26,6 +27,7 @@ app.use(express.json());
 let rawData = fs.readFileSync('data.json');
 let users: User[] = JSON.parse(rawData.toString());
 
+app.use(cors());
 // Route to get all users
 app.get('/users', (req: Request, res: Response) => {
     res.json(users);

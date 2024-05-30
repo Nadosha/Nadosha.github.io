@@ -10,8 +10,10 @@
   "author": "Andrii Nadosha",
   "license": "ISC",
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/uuid": "^9.0.8",
+    "cors": "^2.8.5",
     "nodemon": "^3.1.2",
     "typescript": "^5.4.5"
   }

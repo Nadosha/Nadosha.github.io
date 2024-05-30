@@ -3,16 +3,20 @@ import { DataTable } from '@Components/DataTable/DataTable'
 import { useThemeMode } from '@Theme/lib/ThemeToggleProvider'
 import ImageCellRenderer from '@Components/DataTable/ImageRender'
 import ActionCellRender from '@Components/DataTable/ActionCellRender'
+import { ReactNode } from 'react'
 
-const UserList = () => {
+interface UserListI {
+    data: any[]
+}
+const UserList: React.FC<UserListI> = ({ data }) => {
     const { themeMode } = useThemeMode()
 
     const colDef: ColDef[] = [
         { field: 'picture', headerName: 'Avatar', cellRenderer: ImageCellRenderer },
-        { field: 'name', headerName: 'Name', editable: true },
-        { field: 'gender', headerName: 'Gender', editable: true },
+        { field: 'name', headerName: 'Name', editable: true, filter: true },
+        { field: 'gender', headerName: 'Gender', editable: true, filter: true },
         { field: 'age', headerName: 'Age', editable: true },
-        { field: 'company', headerName: 'Company', editable: true },
+        { field: 'company', headerName: 'Company', editable: true, filter: true },
         { field: 'balance', headerName: 'Balance', editable: true },
         { field: 'email', headerName: 'Email', editable: true },
         { field: 'isActive', headerName: 'Active', editable: true },
@@ -20,21 +24,6 @@ const UserList = () => {
             field: '_id',
             headerName: 'Delete',
             cellRenderer: ActionCellRender,
-        },
-    ]
-
-    // After redux added, DELETE this
-    const data = [
-        {
-            _id: '6656e922f031bf5a18048271',
-            isActive: true,
-            balance: '$1,542.33',
-            picture: 'https://media.shally.app/heroes/kawaii-boy.jpg',
-            age: 29,
-            name: 'Tami Allison',
-            gender: 'female',
-            company: 'TALENDULA',
-            email: 'tamiallison@talendula.com',
         },
     ]
 
