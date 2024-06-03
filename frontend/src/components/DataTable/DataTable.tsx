@@ -1,15 +1,19 @@
 import { AgGridReact, AgGridReactProps } from 'ag-grid-react'
 import { GridApi, GridReadyEvent } from 'ag-grid-community'
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useWindowSize } from '@Hooks/useWindowSize'
 import { useContainerWidth } from '@Hooks/useContainerWidth'
 
-export function DataTable({
+interface DataTableI {
+    theme?: string
+    debounce?: number
+}
+export const DataTable = ({
     onGridReady,
     theme = 'ag-theme-alpine',
-    debounce = 0,
+    debounce = 100,
     ...props
-}: AgGridReactProps & { theme?: string; debounce?: number }) {
+}: AgGridReactProps & DataTableI) => {
     const [gridApi, setGridApi] = useState<GridApi | undefined>()
     const [windowWidth] = useWindowSize(debounce)
     const { width: containerWidth, ref } = useContainerWidth(debounce)
@@ -33,6 +37,7 @@ export function DataTable({
                 paginationPageSize={50}
                 onGridReady={handleGridReady}
                 pagination={true}
+                readOnlyEdit={true}
                 {...props}
             />
         </div>

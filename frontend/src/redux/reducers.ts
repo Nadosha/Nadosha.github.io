@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { initialStateT } from '@Types/DataState.types'
 import { validateJson } from '@Utils/validateJson'
-import { createUser, fetchUsers, updateUsers } from '@Redux/actions'
+import { createUser, deleteUser, fetchUsers, updateUser } from '@Redux/actions'
 
 export const initialState: initialStateT = {
     users: [],
@@ -33,7 +33,7 @@ const dataSlice = createSlice({
                 state.error = action.error.message
             })
 
-            .addCase(updateUsers.fulfilled, (state, action) => {
+            .addCase(updateUser.fulfilled, (state, action) => {
                 state.loading = false
                 state.error = undefined
 
@@ -44,7 +44,13 @@ const dataSlice = createSlice({
                 state.loading = false
                 state.error = undefined
                 state.users.push(action.payload)
-                state.activeUser = action.payload
+            })
+
+            .addCase(deleteUser.fulfilled, (state, action) => {
+                state.loading = false
+                state.error = undefined
+                const deletedUser = action.payload // Assuming the payload is the ID of the deleted user
+                state.users = state.users.filter((user) => user._id !== deletedUser)
             })
     },
 })

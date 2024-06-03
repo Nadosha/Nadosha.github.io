@@ -22,17 +22,6 @@
     "email": "helencastro@maxemia.com"
   },
   {
-    "_id": "665853a3b5831dee5202dc2b",
-    "isActive": true,
-    "balance": "$3,189.47",
-    "picture": "http://placehold.it/32x32",
-    "age": 39,
-    "name": "Ruby Miller",
-    "gender": "female",
-    "company": "DUFLEX",
-    "email": "rubymiller@duflex.com"
-  },
-  {
     "_id": "665853a3b142a7799b4fa223",
     "isActive": true,
     "balance": "$1,813.95",
@@ -44,50 +33,6 @@
     "email": "rowenareese@ecstasia.com"
   },
   {
-    "_id": "665853a3cdc0de8ad0e7e268",
-    "isActive": false,
-    "balance": "$1,010.73",
-    "picture": "http://placehold.it/32x32",
-    "age": 34,
-    "name": "Hoffman Marks",
-    "gender": "male",
-    "company": "DIGIPRINT",
-    "email": "hoffmanmarks@digiprint.com"
-  },
-  {
-    "_id": "665853a3e30ed340cdab2e86",
-    "isActive": true,
-    "balance": "$2,303.17",
-    "picture": "http://placehold.it/32x32",
-    "age": 23,
-    "name": "Judy Marsh",
-    "gender": "female",
-    "company": "STREZZO",
-    "email": "judymarsh@strezzo.com"
-  },
-  {
-    "_id": "665853a3b15d318f9e2ac6ce",
-    "isActive": true,
-    "balance": "$1,013.46",
-    "picture": "http://placehold.it/32x32",
-    "age": 38,
-    "name": "Rice Duffy",
-    "gender": "male",
-    "company": "SKINSERVE",
-    "email": "riceduffy@skinserve.com"
-  },
-  {
-    "_id": "665853a3fb13116593b67258",
-    "isActive": true,
-    "balance": "$3,574.19",
-    "picture": "http://placehold.it/32x32",
-    "age": 34,
-    "name": "Valerie Sharpe",
-    "gender": "female",
-    "company": "COASH",
-    "email": "valeriesharpe@coash.com"
-  },
-  {
     "_id": "665853a32acf0abf778e8e4c",
     "isActive": false,
     "balance": "$3,750.59",
@@ -97,39 +42,6 @@
     "gender": "male",
     "company": "BALUBA",
     "email": "gibsonweber@baluba.com"
-  },
-  {
-    "_id": "665853a3bbcee3fe013a8c65",
-    "isActive": true,
-    "balance": "$2,421.47",
-    "picture": "http://placehold.it/32x32",
-    "age": 22,
-    "name": "Cecilia Conrad",
-    "gender": "female",
-    "company": "CEPRENE",
-    "email": "ceciliaconrad@ceprene.com"
-  },
-  {
-    "_id": "665853a3db7189f05d110c58",
-    "isActive": true,
-    "balance": "$3,020.31",
-    "picture": "http://placehold.it/32x32",
-    "age": 23,
-    "name": "Elvia Stark",
-    "gender": "female",
-    "company": "QIAO",
-    "email": "elviastark@qiao.com"
-  },
-  {
-    "_id": "665853a3070a3002a93987df",
-    "isActive": false,
-    "balance": "$3,520.05",
-    "picture": "http://placehold.it/32x32",
-    "age": 29,
-    "name": "Yang Huffman",
-    "gender": "male",
-    "company": "CODAX",
-    "email": "yanghuffman@codax.com"
   },
   {
     "_id": "665853a33c1a22677cd8dbe1",

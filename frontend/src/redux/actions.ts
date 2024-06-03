@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
+import { AddNewUserFormI, UserT } from '@Types/DataState.types'
 
 export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
     try {
@@ -11,23 +12,41 @@ export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
 
         return res
     } catch (error: any) {
-        console.log('Error', error)
+        throw new Error('Error:', error)
     }
 })
 
-export const updateUsers = createAsyncThunk(
-    'users/updateUsers',
-    async (
-        { flowId, newValues }: { flowId: string; newValues: { name: string; workspace: string } },
-        { rejectWithValue }
-    ) => {
+export const createUser = createAsyncThunk(
+    'users/createUser',
+    async (newUserInput: AddNewUserFormI, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:3001/users/${flowId}`, {
-                method: 'PATCH',
+            const response = await fetch(`http://localhost:3001/users`, {
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(newValues),
+                body: JSON.stringify(newUserInput),
+            })
+            if (!response.ok) {
+                throw new Error('Failed to create flow')
+            }
+            return response.json()
+        } catch (error: any) {
+            return rejectWithValue(error.message)
+        }
+    }
+)
+
+export const updateUser = createAsyncThunk(
+    'users/updateUser',
+    async ({ user }: { user: UserT }, { rejectWithValue }) => {
+        try {
+            const response = await fetch(`http://localhost:3001/users/${user._id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(user),
             })
 
             if (!response.ok) {
@@ -40,21 +59,21 @@ export const updateUsers = createAsyncThunk(
     }
 )
 
-export const createUser = createAsyncThunk(
-    'users/createUser',
-    async (classInput: { name: string; workspace: string }, { rejectWithValue }) => {
+export const deleteUser = createAsyncThunk(
+    'users/deleteUser',
+    async (userId: string, { rejectWithValue }) => {
         try {
-            const response = await fetch(`http://localhost:3001/users`, {
-                method: 'POST',
+            const response = await fetch(`http://localhost:3001/users/${userId}`, {
+                method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(classInput),
             })
+
             if (!response.ok) {
-                throw new Error('Failed to create flow')
+                throw new Error('Failed to update flow')
             }
-            return response.json()
+            return await response.json()
         } catch (error: any) {
             return rejectWithValue(error.message)
         }

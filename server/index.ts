@@ -79,10 +79,10 @@ app.delete('/users/:id', (req: Request, res: Response) => {
     }
     const deletedUser = users.splice(deleteUserIndex, 1);
     fs.writeFileSync('data.json', JSON.stringify(users, null, 2));
-    res.json(deletedUser);
+    res.json(deletedUser[0]._id);
 });
 
 // Start the server
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.info(`Server is running on port ${PORT}`);
 });
