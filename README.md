@@ -64,5 +64,40 @@ pnpm dev
 This will start the front-end, back-end.
 
 
+# Usage
+
+Heartpase app - is consist of such functionality:
+
+- ### Add User to the table
+  ![image](screens/Screen2.png)
+  ![image](screens/Screen3.png)
+
+- ### Edit user info in the table
+  ![image](screens/screen12.png)
+
+- ### Delete user from the table
+  ![image](screens/Screen4.png)
+
+- ### See the list of all 1,000 + users in a paginated table
+  ![image](screens/screen1.png)
+
+- ### Two ways sorting for table data
+  ![image](screens/Screen6.png)
+
+- ### Searching data by column values
+  ![image](screens/Screen7.png)
+
+- ### See two graphs:
+- - ### Correlation between users age and avarage budget; 
+    ![image](screens/Screen8.png)
+- - ### Correlation in percentage between male and female budget amount.
+    ![image](screens/Screen9.png)
+
+- ### Application is responsible and useful on mobile devices.
+  ![image](screens/Screen10.png)
+- ### Application supports Dark and Light mode.
+  ![image](screens/Screen11.png)
+
+
 
 # Thank you for your time and consideration!
