@@ -1,7 +1,6 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
-
     webpack: {
         alias: {
             '@Components': path.resolve(__dirname, 'src/components'),
@@ -12,5 +11,9 @@ module.exports = {
             '@Types': path.resolve(__dirname, 'src/types'),
             '@Utils': path.resolve(__dirname, 'src/utils'),
         },
+        devServer: {
+            host: '0.0.0.0',
+            port: 3000,
+        },
     },
-};
+}

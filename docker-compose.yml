@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+  frontend:
+    container_name: heartpace-client
+    image: andriinadosha/heartpace-assignment-client
+    working_dir: /apps/heartpace-assignment-client
+    restart: always
+    command: yarn start
+    volumes:
+      - type: bind
+        source: .
+        target: /apps
+    build:
+      context: ./heartpace-assignment-client
+    ports:
+      - '3030:3030'
+    environment:
+      API_URL: http://backend:3001
+
+  backend:
+    container_name: heartpace-server
+    image: andriinadosha/heartpace-assignment-server
+    working_dir:  /apps/heartpace-assignment-server
+    restart: always
+    command: yarn run dev
+    volumes:
+      - type: bind
+        source: .
+        target: /apps
+    build:
+        context: ./heartpace-assignment-server
+    ports:
+      - "3001:3001"
