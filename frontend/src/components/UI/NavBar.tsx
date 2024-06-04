@@ -1,14 +1,10 @@
-import ToggleTheme from '@Components/UI/ToggleTheme'
 import React, { useCallback } from 'react'
-import Container from '@mui/material/Container'
-import Toolbar from '@mui/material/Toolbar'
-import AcUnitIcon from '@mui/icons-material/AcUnit'
-import Typography from '@mui/material/Typography'
-import Box from '@mui/material/Box'
-import Tooltip from '@mui/material/Tooltip'
-import AppBar from '@mui/material/AppBar'
 import AddUserDrawer from '@Components/UI/Drawer'
-import { Button } from '@mui/material'
+
+import { Container, Toolbar, Typography, Box, Tooltip, AppBar, Button } from '@mui/material'
+
+import ToggleTheme from '@Components/UI/ToggleTheme'
+import AcUnitIcon from '@mui/icons-material/AcUnit'
 
 const NavBar = () => {
     const [open, setOpen] = React.useState(false)

@@ -7,6 +7,7 @@ import { DataTable } from '@Components/DataTable/DataTable'
 import { useAppDispatch } from '@Redux/store'
 import { UserT } from '@Types/DataState.types'
 import { deleteUser, updateUser } from '@Redux/actions'
+import { formatCurrency } from '@Utils/FormatCurrency'
 
 interface UserListI {
     data: UserT[]
@@ -38,7 +39,19 @@ const UserList: React.FC<UserListI> = ({ data }) => {
         { field: 'gender', headerName: 'Gender', editable: true, filter: true },
         { field: 'age', headerName: 'Age', editable: true },
         { field: 'company', headerName: 'Company', editable: true, filter: true },
-        { field: 'balance', headerName: 'Balance', editable: true },
+        {
+            field: 'balance',
+            headerName: 'Balance',
+            editable: true,
+            valueFormatter: (params) => {
+                const { value } = params
+                if (typeof value === 'string' && /^\$\d{1,3}(,\d{3})*(\.\d{1,2})?$/.test(value)) {
+                    return value // Return the value as is
+                } else {
+                    return formatCurrency(value)
+                }
+            },
+        },
         { field: 'email', headerName: 'Email', editable: true },
         { field: 'isActive', headerName: 'Active', editable: true },
         {

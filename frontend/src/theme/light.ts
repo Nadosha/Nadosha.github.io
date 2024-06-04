@@ -1,13 +1,14 @@
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles'
 
 // A custom theme for this app
 const Light = createTheme({
     palette: {
         mode: 'light',
         primary: {
-            main: '#ffffff'
+            main: '#ffffff',
+            contrastText: '#383636',
         },
     },
-});
+})
 
-export default Light;
+export default Light

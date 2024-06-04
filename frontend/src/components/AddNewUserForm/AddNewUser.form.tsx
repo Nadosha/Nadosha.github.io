@@ -10,6 +10,7 @@ import { validationSchema } from './AddNewUser.schema'
 const AddNewUserForm = ({ closeDrawer }: { closeDrawer: () => void }) => {
     const dispatch = useAppDispatch()
     const [balance, setBalance] = useState<string | undefined>()
+
     const initialValues: AddNewUserFormI = {
         isActive: true,
         balance: '',
@@ -89,7 +90,7 @@ const AddNewUserForm = ({ closeDrawer }: { closeDrawer: () => void }) => {
                                 value={values.company}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                error={(errors.company && touched.company) || undefined}
+                                error={(errors.company && touched.company) || false}
                                 helperText={errors.company && touched.company ? errors.company : ''}
                             />
                             <TextField
@@ -102,7 +103,7 @@ const AddNewUserForm = ({ closeDrawer }: { closeDrawer: () => void }) => {
                                 value={values.email}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                error={(errors.email && touched.email) || undefined}
+                                error={(errors.email && touched.email) || false}
                                 helperText={errors.email && touched.email ? errors.email : ''}
                             />
                             <FormControl fullWidth margin="normal" variant="standard">
@@ -128,7 +129,7 @@ const AddNewUserForm = ({ closeDrawer }: { closeDrawer: () => void }) => {
                                 value={values.age}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
-                                error={(errors.age && touched.age) || undefined}
+                                error={(errors.age && touched.age) || false}
                                 helperText={errors.age && touched.age ? errors.age : ''}
                             />
                             <TextField
@@ -147,7 +148,7 @@ const AddNewUserForm = ({ closeDrawer }: { closeDrawer: () => void }) => {
                                     handleBalanceBlur(e)
                                     handleBlur(e)
                                 }}
-                                error={(errors.balance && touched.balance) || undefined}
+                                error={(errors.balance && touched.balance) || false}
                                 helperText={errors.balance && touched.balance ? errors.balance : ''}
                             />
 

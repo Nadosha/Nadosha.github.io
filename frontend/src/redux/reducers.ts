@@ -5,7 +5,7 @@ import { createUser, deleteUser, fetchUsers, updateUser } from '@Redux/actions'
 
 export const initialState: initialStateT = {
     users: [],
-    activeUser: {},
+    activeUser: undefined,
     loading: false,
     error: undefined,
 }
@@ -36,8 +36,13 @@ const dataSlice = createSlice({
             .addCase(updateUser.fulfilled, (state, action) => {
                 state.loading = false
                 state.error = undefined
+                const updatedUser = action.payload
+                state.activeUser = updatedUser
+                const userIndex = state.users.findIndex((user) => user._id === updatedUser._id)
 
-                state.activeUser = action.payload
+                if (userIndex !== -1) {
+                    state.users[userIndex] = { ...state.users[userIndex], ...updatedUser }
+                }
             })
 
             .addCase(createUser.fulfilled, (state, action) => {

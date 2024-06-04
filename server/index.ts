@@ -28,7 +28,6 @@ let rawData = fs.readFileSync('data.json');
 let users: User[] = JSON.parse(rawData.toString());
 
 app.use(cors());
-// Route to get all users
 app.get('/users', (req: Request, res: Response) => {
     res.json(users);
 });

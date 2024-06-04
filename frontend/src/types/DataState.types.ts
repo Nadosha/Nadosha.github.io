@@ -11,8 +11,8 @@ export type UserT = {
 }
 
 export type initialStateT = {
-    users: any[]
-    activeUser: any
+    users: UserT[]
+    activeUser: UserT | undefined
     loading: boolean
     error: string | undefined
 }
