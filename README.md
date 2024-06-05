@@ -1,5 +1,6 @@
 Welcome to Heartpace Assignment
 =============== 
+**The app is ready for use by this link: http://44.201.232.63:3000/**
 
 This app was created using React and Redux for the front end and Node.js and Express for the back end.
 
