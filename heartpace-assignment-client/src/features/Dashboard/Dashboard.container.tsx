@@ -37,4 +37,4 @@ const DashboardContainer = () => {
     )
 }
 
-export default DashboardContainer
+export default React.memo(DashboardContainer)

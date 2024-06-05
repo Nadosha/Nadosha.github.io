@@ -1,4 +1,6 @@
-interface GroupedData {
+import { UserT } from '@Types/DataState.types'
+
+interface GroupedDataI {
     name: string
     uv: number
     pv: number
@@ -7,7 +9,7 @@ interface GroupedData {
 }
 
 export const balanceByAgeGroups = (rawData: any[]) => {
-    const groupedData: Record<string, GroupedData> = {
+    const groupedData: Record<string, GroupedDataI> = {
         '20-30': { name: '20-30', uv: 0, pv: 0, amt: 0, count: 0 },
         '30-40': { name: '30-40', uv: 0, pv: 0, amt: 0, count: 0 },
         '40-50': { name: '40-50', uv: 0, pv: 0, amt: 0, count: 0 },
@@ -34,21 +36,21 @@ export const balanceByAgeGroups = (rawData: any[]) => {
         }
     })
 
-    const chartData: GroupedData[] = Object.values(groupedData)
+    const chartData: GroupedDataI[] = Object.values(groupedData)
 
     return chartData
 }
 
-interface PieChartData {
+interface PieChartDataI {
     name: string
     value: number
 }
 
-export const balanceByMale = (rawData: any[]) => {
+export const balanceByMale = (rawData: UserT[]) => {
     const maleData = rawData.filter((item) => item.gender === 'male')
     const femaleData = rawData.filter((item) => item.gender === 'female')
 
-    const calculateAverageBalance = (data: any[]): number => {
+    const calculateAverageBalance = (data: UserT[]): number => {
         if (data.length === 0) return 0
 
         const totalBalance = data.reduce((acc, item) => {
@@ -61,7 +63,7 @@ export const balanceByMale = (rawData: any[]) => {
     const maleAverageBalance: number = calculateAverageBalance(maleData)
     const femaleAverageBalance: number = calculateAverageBalance(femaleData)
 
-    const pieChartData: PieChartData[] = [
+    const pieChartData: PieChartDataI[] = [
         { name: 'Male', value: maleAverageBalance },
         { name: 'Female', value: femaleAverageBalance },
     ]

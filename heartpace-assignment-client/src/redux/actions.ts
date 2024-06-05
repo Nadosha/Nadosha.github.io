@@ -8,9 +8,8 @@ export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
         if (!response.ok) {
             throw new Error('Failed to fetch users')
         }
-        const res = await response.json()
 
-        return res
+        return await response.json()
     } catch (error: any) {
         throw new Error('Error:', error)
     }
@@ -30,6 +29,7 @@ export const createUser = createAsyncThunk(
             if (!response.ok) {
                 throw new Error('Failed to create flow')
             }
+
             return response.json()
         } catch (error: any) {
             return rejectWithValue(error.message)
@@ -52,6 +52,7 @@ export const updateUser = createAsyncThunk(
             if (!response.ok) {
                 throw new Error('Failed to update flow')
             }
+
             return await response.json()
         } catch (error: any) {
             return rejectWithValue(error.message)
@@ -73,6 +74,7 @@ export const deleteUser = createAsyncThunk(
             if (!response.ok) {
                 throw new Error('Failed to update flow')
             }
+
             return await response.json()
         } catch (error: any) {
             return rejectWithValue(error.message)

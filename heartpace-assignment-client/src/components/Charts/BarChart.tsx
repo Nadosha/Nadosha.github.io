@@ -1,4 +1,4 @@
-import React, { PureComponent, ReactNode } from 'react'
+import React from 'react'
 import {
     AreaChart,
     Area,
@@ -9,8 +9,9 @@ import {
     ResponsiveContainer,
 } from 'recharts'
 import { balanceByAgeGroups } from '@Components/Charts/DataCalculation.utils'
+import { UserT } from '@Types/DataState.types'
 
-export const BarChart: React.FC<{ rawData: any[] }> = ({ rawData }) => {
+export const BarChart: React.FC<{ rawData: UserT[] }> = ({ rawData }) => {
     const data = balanceByAgeGroups(rawData)
     return (
         <div style={{ width: '100%', height: 300 }}>

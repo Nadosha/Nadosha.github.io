@@ -1,6 +1,7 @@
 import React from 'react'
 import { ResponsiveContainer, PieChart, Pie, Cell } from 'recharts'
 import { balanceByMale } from '@Components/Charts/DataCalculation.utils'
+import { UserT } from '@Types/DataState.types'
 
 const COLORS = ['#7469b6', '#e1afd1']
 const RADIAN = Math.PI / 180
@@ -40,7 +41,7 @@ const renderCustomizedLabel = ({
         </text>
     )
 }
-export const CircleChart: React.FC<{ rawData: any[] }> = ({ rawData }) => {
+export const CircleChart: React.FC<{ rawData: UserT[] }> = ({ rawData }) => {
     const data = balanceByMale(rawData)
 
     return (

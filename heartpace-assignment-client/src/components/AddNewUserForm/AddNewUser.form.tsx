@@ -1,4 +1,4 @@
-import { AddNewUserFormI, UserT } from '@Types/DataState.types'
+import { AddNewUserFormI } from '@Types/DataState.types'
 import { Field, Form, Formik } from 'formik'
 import React, { useState } from 'react'
 import Typography from '@mui/material/Typography'
