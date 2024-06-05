@@ -20,7 +20,7 @@ This will build the necessary images for the front-end, back-end, and database.
 Once images are built, start the containers:
 
 ```bash
-docker compose up
+docker compose up -d
 ```
 
 This will start the front-end, back-end, and database containers.
